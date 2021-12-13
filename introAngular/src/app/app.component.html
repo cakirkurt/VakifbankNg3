@@ -1,9 +1,15 @@
+<app-header-menu></app-header-menu>
 <div class="container">
+
   <h1>{{title}}</h1>
   <p>Kullanıcı adı: {{userName}}</p>
   <span>{{eposta}}</span>
   <div>
-    <button class="btn btn-outline-primary" (click)="filtrele()">{{getButtonText()}}</button>
+    <input type="text" class="form-control" #action>
+    <button class="btn btn-success" (click)="addNewItem(action.value)">Yeni Görev Ekle</button>
+  </div>
+  <div>
+    <button class="btn btn-outline-primary" (click)="filter()">{{getButtonText()}}</button>
   </div>
   <div *ngFor="let item of todoItems">
     <div>

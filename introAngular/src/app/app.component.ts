@@ -20,7 +20,7 @@ export class AppComponent {
 
   todoItems: TodoItem[]=todoItems;
 
-  filtrele(){
+  filter(){
     this.isShowAllItems = !this.isShowAllItems;
     if (this.isShowAllItems) {
        this.todoItems = todoItems; 
@@ -32,5 +32,11 @@ export class AppComponent {
   }
   getButtonText(){
     return this.isShowAllItems ? "Sadece yapılacakları göster" : "Tümünü göster";
+  }
+  addNewItem(name:string){
+    let newItem = new TodoItem();
+    newItem.actionName = name;
+    newItem.isCompleted = false;
+    this.todoItems.push(newItem);
   }
 }
