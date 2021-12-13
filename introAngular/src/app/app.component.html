@@ -1,11 +1,20 @@
-<h1>{{title}}</h1>
-<p>Kullanıcı adı: {{userName}}</p>
-<span>{{eposta}}</span>
-
-<div *ngFor="let item of todoItems">
+<div class="container">
+  <h1>{{title}}</h1>
+  <p>Kullanıcı adı: {{userName}}</p>
+  <span>{{eposta}}</span>
   <div>
-    <input type="checkbox" [checked]="item.isCompleted" name="" id=""> {{item.actionName}} 
-    <span [ngClass]="item.isCompleted ? 'green':'red' ">{{item.isCompleted ? "Yapıldı":"Yapılmadı"}}</span>
-       
+    <button class="btn btn-outline-primary" (click)="filtrele()">{{getButtonText()}}</button>
   </div>
+  <div *ngFor="let item of todoItems">
+    <div>
+      <input type="checkbox" [(ngModel)]="item.isCompleted" name="" id=""> {{item.actionName}}
+      <span class="badge rounded-pill " [ngClass]="item.isCompleted ? 'bg-success':'bg-danger' ">{{item.isCompleted ?
+        "Yapıldı":"Yapılmadı"}}</span>
+
+    </div>
+    <hr>
+  </div>
+
+  <input type="text" [(ngModel)]="mesaj">
+  <p>{{mesaj}}</p>
 </div>

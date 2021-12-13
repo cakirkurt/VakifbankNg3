@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TodoItem } from './todo-item.model';
+import { todoItems } from './todo-list.constant';
 
 @Component({
   selector: 'app-root',
@@ -11,9 +12,25 @@ export class AppComponent {
   userName = 'Türkay';
   eposta = 'turkay.urkmez@dinamikzihin.com'
 
-  todoItems: TodoItem[]=[
-    new TodoItem('Yeni bir mouse al',true),
-    new TodoItem('.NET Core ile Web API geliştir',true),
-    new TodoItem('Angular öğren',false),
-  ]
+  mesaj:string ='';
+  isShowAllItems :boolean = true;
+  constructor(){
+    console.log(todoItems[0].isCompleted);
+  }
+
+  todoItems: TodoItem[]=todoItems;
+
+  filtrele(){
+    this.isShowAllItems = !this.isShowAllItems;
+    if (this.isShowAllItems) {
+       this.todoItems = todoItems; 
+    }
+    else{
+      this.todoItems = this.todoItems.filter(x=>!x.isCompleted);
+    }
+   
+  }
+  getButtonText(){
+    return this.isShowAllItems ? "Sadece yapılacakları göster" : "Tümünü göster";
+  }
 }
