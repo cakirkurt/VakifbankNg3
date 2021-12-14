@@ -8,12 +8,24 @@ import { Project } from '../models/project.model';
 })
 export class ProjectComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    this.incompletedTaskCount = this.project?.tasks?.filter(x=>!x.isCompleted).length;
+    
+  }
 
   @Input('projectInParent') project: Project;
-  @Input('') secondProject:Project
+
+  incompletedTaskCount :number | undefined = 0;
 
   ngOnInit(): void {
+    this.incompletedTaskCount = this.project.tasks?.filter(x=>!x.isCompleted).length;
   }
+  
+  getIncompletedTaskCount(){
+      this.incompletedTaskCount = this.project.tasks?.filter(x=>!x.isCompleted).length;
+      console.log(this.incompletedTaskCount);
+      return  this.incompletedTaskCount;
+  }
+
 
 }

@@ -9,6 +9,7 @@ import { ProjectListComponent } from './project-list/project-list.component';
 import { ProjectComponent } from './project/project.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { TaskListComponent } from './task-list/task-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TaskListComponent } from './task-list/task-list.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
