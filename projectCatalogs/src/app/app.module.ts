@@ -12,6 +12,7 @@ import { TaskListComponent } from './task-list/task-list.component';
 import { FormsModule } from '@angular/forms';
 import { SearchProjectPipe } from './pipes/search-project.pipe';
 import { HttpClientModule } from '@angular/common/http'
+import { CategoryService } from './services/category.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import { HttpClientModule } from '@angular/common/http'
     HttpClientModule
 
   ],
-  providers: [],
+  providers: [
+    CategoryService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

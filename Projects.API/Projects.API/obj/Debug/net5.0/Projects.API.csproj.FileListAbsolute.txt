@@ -22,7 +22,6 @@ C:\Users\turka\source\repos\Kurumsal\Vakıfbank\Angular Part III\Projects.API\Pr
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\Angular Part III\Projects.API\Projects.API\obj\Debug\net5.0\staticwebassets\Projects.API.StaticWebAssets.xml
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\Angular Part III\Projects.API\Projects.API\obj\Debug\net5.0\scopedcss\bundle\Projects.API.styles.css
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\Angular Part III\Projects.API\Projects.API\obj\Debug\net5.0\Projects.API.RazorTargetAssemblyInfo.cache
-C:\Users\turka\source\repos\Kurumsal\Vakıfbank\Angular Part III\Projects.API\Projects.API\obj\Debug\net5.0\Projects.API.csproj.CopyComplete
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\Angular Part III\Projects.API\Projects.API\obj\Debug\net5.0\Projects.API.dll
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\Angular Part III\Projects.API\Projects.API\obj\Debug\net5.0\ref\Projects.API.dll
 C:\Users\turka\source\repos\Kurumsal\Vakıfbank\Angular Part III\Projects.API\Projects.API\obj\Debug\net5.0\Projects.API.pdb

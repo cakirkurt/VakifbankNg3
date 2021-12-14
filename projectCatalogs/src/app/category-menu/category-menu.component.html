@@ -1,5 +1,5 @@
 <div class="list-group" *ngFor="let category of categories ">
-    <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+    <a class="list-group-item list-group-item-action" routerLink="projeler/kategori/{{category.id}}" aria-current="true">
       {{category.name}}
     </a>
     
