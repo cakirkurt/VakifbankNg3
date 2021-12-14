@@ -1,8 +1,8 @@
 <div class="container">
     <div class="row m-3" >
-        <input type="text" class="form-control" placeholder="Aranacak kelime...">
+        <input type="text" class="form-control" placeholder="Aranacak kelime..." [(ngModel)]="searchWord" >
     </div>
-    <div class="row" *ngFor="let project of projects">
+    <div class="row" *ngFor="let project of projects | searchProject : searchWord">
         <div class="col-12">
             <!-- <div>
                 <h3>{{project.name}}</h3>

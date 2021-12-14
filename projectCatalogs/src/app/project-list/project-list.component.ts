@@ -11,6 +11,7 @@ export class ProjectListComponent implements OnInit {
 
   constructor() { }
 
+  searchWord: string;
   projects: Project[] = projects;
   ngOnInit(): void {
   }

@@ -11,6 +11,7 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
 import { TaskListComponent } from './task-list/task-list.component';
 import { FormsModule } from '@angular/forms';
 import { SearchProjectPipe } from './pipes/search-project.pipe';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import { SearchProjectPipe } from './pipes/search-project.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
