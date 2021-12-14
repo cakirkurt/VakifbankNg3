@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-body">
         <h4 class="card-title bg-info p-2 text-white">{{project.name | titlecase}}
-            <span class="badge rounded-pill float-end bg-dark">Kalan görev: {{getIncompletedTaskCount()}} </span>
+            <span [ngClass]="taskFound ? 'show':'hide'" class="badge rounded-pill float-end bg-dark">Kalan görev: {{taskCount}} </span>
         
         </h4>
        
@@ -11,6 +11,9 @@
         </p>
         <p class="card-text">
             Başlangıç tarihi: {{project.startDate | date : 'fullDate'}}
+        </p>
+        <p class="card-text">
+            Tamamlanma oranı: {{project.completeRate | percent}}
         </p>
         
         <app-task-list [project]="project">

@@ -9,23 +9,33 @@ import { Project } from '../models/project.model';
 export class ProjectComponent implements OnInit {
 
   constructor() { 
-    this.incompletedTaskCount = this.project?.tasks?.filter(x=>!x.isCompleted).length;
+    //this.incompletedTaskCount = this.project?.tasks?.filter(x=>!x.isCompleted).length;
     
   }
 
   @Input('projectInParent') project: Project;
-
-  incompletedTaskCount :number | undefined = 0;
+  
+  taskCount: number | undefined=0;
+  //incompletedTaskCount :number | undefined = 0;
+  taskFound:boolean;
 
   ngOnInit(): void {
-    this.incompletedTaskCount = this.project.tasks?.filter(x=>!x.isCompleted).length;
+   //this.incompletedTaskCount = this.project.tasks?.filter(x=>!x.isCompleted).length;
   }
   
-  getIncompletedTaskCount(){
-      this.incompletedTaskCount = this.project.tasks?.filter(x=>!x.isCompleted).length;
-      console.log(this.incompletedTaskCount);
-      return  this.incompletedTaskCount;
+  // getIncompletedTaskCount(){
+  //    return this.project.tasks?.filter(x=>!x.isCompleted).length;
+  //    // console.log(this.incompletedTaskCount);
+  //    // return  this.incompletedTaskCount;
+  // }
+  ngAfterContentChecked(){
+      this.taskCount = this.project.tasks?.filter(x=>!x.isCompleted).length;
+      this.taskFound = this.taskCount != undefined &&  this.taskCount>0;
   }
+
+  
+
+
 
 
 }
