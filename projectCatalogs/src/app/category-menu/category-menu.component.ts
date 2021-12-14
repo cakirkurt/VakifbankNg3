@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Category } from '../models/category.model';
 import { categories } from '../models/mocks/categories.mock';
+import { CategoryService } from '../services/category.service';
 
 @Component({
   selector: 'app-category-menu',
@@ -10,13 +11,14 @@ import { categories } from '../models/mocks/categories.mock';
 })
 export class CategoryMenuComponent implements OnInit {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private categoryService: CategoryService) { }
 
   categories: Category[];
 
   ngOnInit(): void {
-    this.httpClient.get<Category[]>("https://mocki.io/v1/e77d1403-4902-4c02-a143-f5a7067eeb94")
-        .subscribe((incomingData:Category[])=>this.categories=incomingData);
+     this.categoryService.getAllCategories()
+                         .subscribe((data:Category[]) => this.categories = data);
+     
     
   }
 
