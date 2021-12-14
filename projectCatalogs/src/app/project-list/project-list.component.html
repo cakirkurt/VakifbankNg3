@@ -1,1 +1,15 @@
-<p>project-list works!</p>
+<div class="container">
+    <div class="row" *ngFor="let project of projects">
+        <div class="col-12">
+            <!-- <div>
+                <h3>{{project.name}}</h3>
+                <p>{{project.description}}</p>
+                <ul *ngFor="let task of project.tasks">
+                    <li>{{task.name}} - {{task.expectedDate}} </li>
+                </ul>
+            </div> -->
+            <app-project [projectInParent]="project"></app-project>
+
+        </div>
+    </div>
+</div>
