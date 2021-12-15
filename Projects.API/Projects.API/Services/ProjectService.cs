@@ -14,6 +14,11 @@ namespace Projects.API.Services
             return projects;
         }
 
+        public List<Project> GetProjectsByCategoryId(int id)
+        {
+            return projects.Where(p => p.CategoryId == id).ToList();
+        }
+
         public ProjectService()
         {
             projects = new List<Project>

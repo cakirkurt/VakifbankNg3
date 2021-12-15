@@ -22,5 +22,14 @@ namespace Projects.API.Controllers
         {
             return Ok(this.projectService.GetProjects());
         }
+        [HttpGet("{id}")]
+        public IActionResult GetProjectByCategoryId(int id)
+        {
+            if (id==0)
+            {
+                return BadRequest();
+            }
+            return Ok(this.projectService.GetProjectsByCategoryId(id));
+        }
     }
 }

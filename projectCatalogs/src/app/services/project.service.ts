@@ -18,4 +18,9 @@ export class ProjectService {
     return this.httpClient.get<Project[]> (this.url);
   }
 
+  getProjectsByCategoryId(id:number):Observable<Project[]>{
+    return this.httpClient.get<Project[]>(this.url+"/"+id);
+    
+  }
+
 }
