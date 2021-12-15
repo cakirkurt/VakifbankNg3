@@ -1,0 +1,6 @@
+<h3>Yeni Kategori Ekle</h3>
+<form [formGroup]="addCategoryForm" (ngSubmit)="addCategory()">
+    <input type="text" name="name" formControlName="name" placeholder="Kategori Adı" class="form-control">
+    <span *ngIf="checkForm()" class="alert alert-danger">Kategori adı boş olamaz</span>
+    <button type="submit" class="btn btn-success">Ekle</button>
+</form>

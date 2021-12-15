@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { Project } from '../models/project.model';
@@ -22,5 +22,16 @@ export class ProjectService {
     return this.httpClient.get<Project[]>(this.url+"/"+id);
     
   }
+  addNewProject(project:Project):Observable<Project> {
+    let option = {
+      headers: new HttpHeaders({
+         'Content-Type':'application/json',
+         'Authorization':'Bearer [JWT]'
+      })
+    }
+     return this.httpClient.post(this.url,project,option);
+
+  } 
+
 
 }

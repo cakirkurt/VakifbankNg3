@@ -1,0 +1,12 @@
+<h3>Login Ekranı</h3>
+<form>
+    <div>
+        <input type="text" placeholder="kullanıcı adı" class="form-control" name="username" [(ngModel)]="userName">
+
+    </div>
+    <div>
+        <input type="text" placeholder="şifre" class="form-control" name="pass" [(ngModel)]="password">
+
+    </div>
+    <button (click)="login()" class="btn btn-success">Giriş yap</button>
+</form>

@@ -1,0 +1,33 @@
+<h3>Yeni Proje Ekle</h3>
+<form #newProject="ngForm" (ngSubmit)="addProject(newProject)" >
+    <div class="m-2">
+        <label for="name">Proje Adı</label>
+        <input #name="ngModel" id="name" required name="name" type="text" class="form-control" [(ngModel)]="project.name">
+        <span class="alert alert-danger form-control" *ngIf="name.invalid && name.dirty">Proje adı zorunludur.</span>
+    </div>
+    <div class="m-2">
+        <label for="description">Açıklama</label>
+        <input  id="description" #description="ngModel" required name="description" type="text" class="form-control" [(ngModel)]="project.description">
+        <span class="alert alert-danger form-control" *ngIf="description.invalid && description.dirty" ></span>
+    </div>
+    <div class="m-2">
+        <label for="categoryId">Kategori Seçiniz</label>
+        <select #categoryId="ngModel" id="categoryId" required name="categoryId" class="form-control" [(ngModel)]="project.categoryId">
+           <option value="">Seçiniz</option>
+           <option value="{{category.id}}" *ngFor="let category of categories">{{category.name}}</option>
+           
+        </select>
+        <span class="alert alert-danger form-control" *ngIf="categoryId.invalid && categoryId.touched">Lütfen kategori seçiniz. </span>
+    </div>
+    <div class="m-2">
+        <label for="details">Ayrıntılar</label>
+        <input id="details" name="details" type="text" class="form-control" [(ngModel)]="project.details">
+        <span></span>
+    </div>
+    <div class="m-2">
+        <label for="startedDate">Başlangıç Tarihi</label>
+        <input id="startDate" name="startDate" type="datetime-local" class="form-control" [(ngModel)]="project.startDate">
+        <span></span>
+    </div>
+    <button type="submit" class="btn btn-success">Proje ekle</button>
+</form>

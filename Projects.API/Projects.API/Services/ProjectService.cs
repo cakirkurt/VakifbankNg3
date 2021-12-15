@@ -56,5 +56,12 @@ namespace Projects.API.Services
 
             };
         }
+
+        internal Project AddProject(Project project)
+        {
+            project.Id = projects[projects.Count - 1].Id + 1;
+            projects.Add(project);
+            return project;
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Projects.API.Models;
 using Projects.API.Services;
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,13 @@ namespace Projects.API.Controllers
                 return BadRequest();
             }
             return Ok(this.projectService.GetProjectsByCategoryId(id));
+        }
+
+        [HttpPost]
+        public IActionResult Add(Project project)
+        {
+            Project addedProject = projectService.AddProject(project);
+            return Created("https://benim.api/eklendi/4", addedProject);
         }
     }
 }
